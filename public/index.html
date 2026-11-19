@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRUD de Alunos — Cartilha ADS</title><link rel="stylesheet" href="/style.css">
+<script src="/app.js" defer></script></head>
+<body><main class="container">
+<header class="cabecalho"><div><p class="etiqueta">ADS · API REST</p>
+<h1>CRUD de Alunos</h1><p class="subtitulo">Cadastro com token JWT e banco MongoDB Atlas.</p></div>
+<span id="statusLogin" class="status">Não autenticado</span></header>
+<section class="card"><h2>1. Login</h2><form id="formLogin" class="formulario">
+<label>Usuário<input id="usuario" required autocomplete="username"></label>
+<label>Senha<input id="senha" type="password" required autocomplete="current-password"></label>
+<button type="submit">Entrar</button><button id="sair" class="secundario" type="button">Sair</button></form></section>
+<section class="card"><h2>2. Cadastro de alunos</h2><form id="formAluno" class="formulario">
+<input id="alunoId" type="hidden">
+<label>Nome<input id="nome" required placeholder="Nome do aluno"></label>
+<label>Curso<input id="curso" required placeholder="ADS"></label>
+<button type="submit" id="salvar">Cadastrar</button>
+<button type="button" id="cancelarEdicao" class="secundario">Cancelar edição</button></form>
+<p class="ajuda">É necessário estar autenticado para cadastrar, editar e excluir.</p></section>
+<section class="card"><div class="linha-titulo"><h2>3. Alunos cadastrados</h2>
+<button id="recarregar" type="button" class="secundario">Atualizar lista</button></div>
+<div class="tabela-rolagem"><table><thead><tr><th>Nome</th><th>Curso</th><th>Ações</th></tr></thead><tbody id="listaAlunos"></tbody></table></div></section>
+<p id="mensagem" role="status" aria-live="polite"></p></main></body></html>
